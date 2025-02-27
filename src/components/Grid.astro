@@ -35,11 +35,6 @@ const { variant } = Astro.props;
 			gap: 4rem;
 		}
 
-		.grid.offset {
-			--row-offset: 7.5rem;
-			padding-bottom: var(--row-offset);
-		}
-
 		/* Shift first item in each row vertically to create staggered effect. */
 		.grid.offset > :global(:nth-child(odd)) {
 			transform: translateY(var(--row-offset));

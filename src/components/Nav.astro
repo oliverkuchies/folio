@@ -28,7 +28,7 @@ const isCurrentPage = (href: string) => {
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			<img src="/assets/oliver.jpg" alt="Logo" width="32" height="32" />
 			Oliver Kucharzewski
 		</a>
 		<menu-button>
@@ -149,6 +149,10 @@ const isCurrentPage = (href: string) => {
 		justify-content: space-between;
 		gap: 0.5rem;
 		padding: 1.5rem;
+	}
+
+	.menu-header img {
+		border-radius: 50%;
 	}
 
 	.site-title {
