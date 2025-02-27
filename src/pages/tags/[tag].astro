@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '../../components/Hero.astro';
+import PortfolioPreview from '../../components/PortfolioPreview.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Grid from '../../components/Grid.astro';
+
+export async function getStaticPaths() {
+    const allPosts = Object.values(import.meta.glob('../../content/work/*.md', { eager: true }));
+    const tags = allPosts.flatMap((post) => post.frontmatter.tags);
+    return [
+        {
+            params: {
+                tag: 'all',
+            },
+        },
+        ...[...new Set(tags)].map((tag) => ({
+            params: {
+                tag,
+            },
+        })),
+    ];
+}
+
+const { tag } = Astro.params;
+const projects = (await getCollection('work')).filter((project) => project.data.tags.includes(tag));
+
+---
+<BaseLayout title={tag}>
+    <main class="wrapper stack gap-8">
+        <div class="stack gap-20">
+                <Hero
+                    title={tag}
+                    align="start"/>
+            </div>
+
+        <div class="gallery">
+            <Grid variant="offset">
+                { projects.map((project) => (
+                    <li>
+                        <PortfolioPreview project={project} />
+                    </li>
+                ))}
+            </Grid>
+        </div> 
+    </main>
+</BaseLayout>

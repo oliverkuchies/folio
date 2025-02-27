@@ -35,22 +35,20 @@ const { Content } = await render(entry);
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
 					<Hero title={entry.data.title} align="start">
+						<p class="description">{entry.data.description}</p>
 						<div class="details">
 							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{entry.data.tags.splice(0,5).map((t) => <Pill><a class={'menu-item'} title={t} href={`/tags/${t}`}>{t}</a></Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
-				<div class="stack gap-10 content">
 					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
 					</div>
-				</div>
 			</main>
 		</div>
 		<ContactCTA />
@@ -58,11 +56,6 @@ const { Content } = await render(entry);
 </BaseLayout>
 
 <style>
-	header {
-		padding-bottom: 2.5rem;
-		border-bottom: 1px solid var(--gray-800);
-	}
-
 	.back-link {
 		display: none;
 	}
@@ -70,10 +63,11 @@ const { Content } = await render(entry);
 	.details {
 		display: flex;
 		flex-direction: column;
-		padding: 0.5rem;
+		padding: 0.5rem 0;
 		gap: 1.5rem;
 		justify-content: space-between;
 		align-items: center;
+		max-height: 100px;
 	}
 
 	.tags {
@@ -86,8 +80,15 @@ const { Content } = await render(entry);
 		max-width: 54ch;
 	}
 
+	h2 {
+		font-size: var(--text-3xl);
+	}
+
+	h3 {
+		font-size: var(--text-2xl);
+	}
+
 	.content {
-		max-width: 65ch;
 		margin-inline: auto;
 	}
 
@@ -148,5 +149,9 @@ const { Content } = await render(entry);
 		.content :global(blockquote) {
 			font-size: var(--text-2xl);
 		}
+	}
+
+	main img {
+		margin-bottom: 20px;
 	}
 </style>

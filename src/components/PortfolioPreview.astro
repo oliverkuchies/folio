@@ -8,12 +8,19 @@ interface Props {
 const { data, id } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${id}`}>
+<a class="card" href={`/work/${id}`} onmouseover="this.querySelector('.overlay').classList.remove('hidden')" onmouseout="this.querySelector('.overlay').classList.add('hidden')">
 	<span class="title">{data.title}</span>
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<span class="overlay hidden">
+		<p>{data.description}</p>
+	</span>
 </a>
 
 <style>
+	.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
 	.card {
 		display: grid;
 		grid-template: auto 1fr / auto 1fr;
@@ -28,6 +35,24 @@ const { data, id } = Astro.props.project;
 		font-size: var(--text-lg);
 		font-weight: 500;
 		transition: box-shadow var(--theme-transition);
+		position: relative;
+	}
+
+	.card span p {
+		color: var(--gray-200);
+		border-radius: 0.375rem;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		height: 100%;
+		width: 100%;
+		padding: 2.5em;
+	}
+
+	.overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.9);
 	}
 
 	.card:hover {
