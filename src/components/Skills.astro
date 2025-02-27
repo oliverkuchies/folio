@@ -10,7 +10,7 @@ import Icon from './Icon.astro';
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Helping teams thrive</h2>
+		<h2>Helping teams</h2>
 		<p>Building up the teams I work with to enable mastery amongst the team.</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
@@ -57,6 +57,16 @@ import Icon from './Icon.astro';
 
 		.skills h2 {
 			font-size: var(--text-2xl);
+		}
+	}
+
+	@media (max-width: 750px) {
+		.card p {
+			font-size: 0.75rem;
+		}
+
+		.card h2 {
+			font-size: 1rem;
 		}
 	}
 </style>

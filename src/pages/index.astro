@@ -41,7 +41,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
+	<div class="stack gap-20">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
@@ -57,7 +57,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 			<Skills />
 		</div>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
+		<main class="wrapper stack gap-20">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Selected Work</h3>
@@ -120,10 +120,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-	}
-
-	.roles {
-		display: none;
+		overflow: hidden;
 	}
 
 	.hero img {
@@ -134,18 +131,20 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 		box-shadow: var(--shadow-md);
 	}
 
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
 
-		.roles {
+	.roles {
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
+			flex-wrap: wrap;
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 1fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
 		}
 
 		.hero img {
