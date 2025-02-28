@@ -227,6 +227,12 @@ h5 {
 	gap: 12rem;
 }
 
+@media (max-width: 500px) {
+	.wrapper {
+		max-width: 100%;
+	}
+}
+
 @media (min-width: 50em) {
 	.lg\:gap-2 {
 		gap: 0.5rem;
