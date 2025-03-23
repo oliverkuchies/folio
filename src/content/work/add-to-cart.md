@@ -1,6 +1,6 @@
 ---
 title: Add To Cart
-publishDate: 2020-03-02 00:00:00
+publishDate: 2025-03-02 00:00:00
 img: /assets/projects/add-to-cart.webp
 img_alt: Add To Cart functionality for UGC Widgets using Shopify
 description: |

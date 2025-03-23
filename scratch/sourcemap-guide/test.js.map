@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["test.ts"],
+  "sourcesContent": ["document.querySelector(\"#increment\")!.addEventListener(\"click\", () => {\n    const counter = document.querySelector(\"#number\")!;\n\n    if (!counter) {\n        throw new Error('Could not find valid counter div');\n    }\n\n    const newValue = Number(counter.innerHTML) + 1;\n\n    if (newValue == 5) {\n        throw new Error(\"I don't like 5\")\n    }\n\n    counter!.innerHTML = newValue.toString();\n});"],
+  "mappings": ";;;AAAA,WAAS,cAAc,YAAY,EAAG,iBAAiB,SAAS,MAAM;AAClE,UAAM,UAAU,SAAS,cAAc,SAAS;AAEhD,QAAI,CAAC,SAAS;AACV,YAAM,IAAI,MAAM,kCAAkC;AAAA,IACtD;AAEA,UAAM,WAAW,OAAO,QAAQ,SAAS,IAAI;AAE7C,QAAI,YAAY,GAAG;AACf,YAAM,IAAI,MAAM,gBAAgB;AAAA,IACpC;AAEA,YAAS,YAAY,SAAS,SAAS;AAAA,EAC3C,CAAC;",
+  "names": []
+}

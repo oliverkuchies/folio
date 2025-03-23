@@ -46,6 +46,10 @@ const { variant } = Astro.props;
 			transform: none;
 		}
 
+		.grid.offset > :global(:first-child) {
+			grid-column: 1 !important;
+		}
+
 		.grid.small {
 			display: flex;
 			flex-wrap: wrap;

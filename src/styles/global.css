@@ -227,6 +227,24 @@ h5 {
 	gap: 12rem;
 }
 
+@font-face {
+	font-family: 'Jetbrains Mono';
+	src: url('/fonts/JetBrainsMono[wwght].ttf') format('ttf');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+.astro-code {
+	background-color: #24292e;
+    color: #e1e4e8;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.astro-code code {
+	font-family: 'Jetbrains Mono', monospace;
+}
+
 @media (max-width: 500px) {
 	.wrapper {
 		max-width: 100%;
