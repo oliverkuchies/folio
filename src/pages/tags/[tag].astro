@@ -5,8 +5,16 @@ import PortfolioPreview from '../../components/PortfolioPreview.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Grid from '../../components/Grid.astro';
 
+interface Post {
+    frontmatter: {
+        tags: string[];
+    };
+}
+
 export async function getStaticPaths() {
-    const allPosts = Object.values(import.meta.glob('../../content/work/*.md', { eager: true }));
+    const allWorkPosts = Object.values(import.meta.glob<Post>('../../content/work/*.md', { eager: true }));
+    const allBlogPosts = Object.values(import.meta.glob<Post>('../../content/blog/*.md', { eager: true }));
+    const allPosts : Post[] = [...allWorkPosts, ...allBlogPosts];
     const tags = allPosts.flatMap((post) => post.frontmatter.tags);
     return [
         {
