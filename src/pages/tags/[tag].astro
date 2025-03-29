@@ -32,6 +32,9 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const projects = (await getCollection('work')).filter((project) => project.data.tags.includes(tag));
+const blogPosts = (await getCollection('blog')).filter((project) => project.data.tags.includes(tag));
+
+const allPosts = [...projects, ...blogPosts].sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
 ---
 <BaseLayout title={tag}>
@@ -44,7 +47,7 @@ const projects = (await getCollection('work')).filter((project) => project.data.
 
         <div class="gallery">
             <Grid variant="offset">
-                { projects.map((project) => (
+                { allPosts.map((project) => (
                     <li>
                         <PortfolioPreview project={project} />
                     </li>
