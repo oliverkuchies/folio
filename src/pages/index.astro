@@ -50,7 +50,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 					align="start"
 				>
 					<div class="roles">
-						{tagsSplice.map(tag => <a href={`/tags/${tag}`}><Pill><Icon icon="code" size="1.33em" />{tag}</Pill></a>)}
+						{tagsSplice.map(tag => <a href={`/tags/${tag}/`}><Pill><Icon icon="code" size="1.33em" />{tag}</Pill></a>)}
 					</div>
 				</Hero>
 			</header>
