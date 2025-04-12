@@ -1,6 +1,6 @@
 ---
 title: End To End Analytics
-publishDate: 2020-03-02 00:00:00
+publishDate: 2025-03-02 00:00:00
 img: /assets/projects/traffic-overview.webp
 img_alt: Google Analytics integration
 description: |
