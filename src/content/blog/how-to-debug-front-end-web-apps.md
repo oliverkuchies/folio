@@ -1,5 +1,5 @@
 ---
-title: All you need to know about sourcemaps
+title: How to debug front-end web apps
 publishDate: 2025-03-23 16:55:00
 img: /assets/blog/how-to-debug-front-end-web-apps/image.png
 img_alt: Debugging front end applications
@@ -64,6 +64,12 @@ Sourcemaps are also helpful in this situation, because they will deliver the ini
 
 When codebases get large, and are filled with many imports - sourcemaps are an absolute necessity for debugging as you can quickly locate errors across multiple files.
 
+### Configuring sourcemaps in your browser settings
+
+To enable sourcemaps in your browser, please enable the following settings as the image below. They will enable sourcemaps to be loaded from remote sources, localhost, and sourcemaps that are CSS & JS based will be loaded accordingly.
+
+![Sourcemap settings](/assets/blog/how-to-debug-front-end-web-apps/source-map-settings.png)
+
 ### Types of sourcemaps
 
 #### Inline Sourcemap
@@ -91,3 +97,38 @@ Linked sourcemaps are very similar to external sourcemaps, except they automatic
 ![Debugging with linked sourcemaps](/assets/blog/how-to-debug-front-end-web-apps/linked-sourcemap.png)
 
 I hope this resource was helpful to you or your team, feel free to drop a comment below if you have any suggestions on improving it or any other interesting findings you've made regarding sourcemaps.
+
+## Searching through sourcemaps
+In-order to search through sourcemaps, you need to toggle the search bar which will appear at the bottom of your developer tools.
+
+Depending on the browser you are utilising, this may appear different - but the core functionality should be there.
+
+The image below will display how to enable search.
+
+![Enable searching in sourcemaps](/assets/blog/how-to-debug-front-end-web-apps/enable-search.png)
+
+Once search is enabled, you can begin your search through the sourcemaps and distributed JS/CSS code.
+
+![Enable searching in sourcemaps](/assets/blog/how-to-debug-front-end-web-apps/searching-sourcemaps.png)
+
+Very easy to utilise! And a massive lifesaver when debugging. While this feature is widely available, many developers overlook the option to search the source code, and result to constantly scanning through their IDE code.
+Sometimes searching through sourcemaps can speed up the debugging process.
+
+## Utilising breakpoints
+Breakpoints are a life saver! Why console.log across your codebase when you can see all the variable values at given points in the application's life cycle?
+
+By clicking on the panel on the right hand side next to the line number of code, you can enable a breakpoint for that line of code.
+
+This means that when the application is about to execute that line of code, the application freezes, and allows you to assess the values of variables at that given state.
+
+By putting your mouse over given variables, you can see their values. You can also utilise the arrow on the top of the right panel to continue allowing your application to step through the code.
+
+![Breakpoints in action](/assets/blog/how-to-debug-front-end-web-apps/breakpoints-in-action.png)
+
+On the right hand bar, you can also monitor which line of code had called the given method, allowing you to track execution across complex applications.
+
+You will also find more advanced usages of breakpoints on the right hand bar. For example, you can click **Event Listener Breakpoints** to listen to calls of particular events, for instance - a click event.
+
+There are a multitude of ways to debug applications, but I have demonstrated a few above and I hope they are helpful to your code practices.
+
+Happy debugging!
