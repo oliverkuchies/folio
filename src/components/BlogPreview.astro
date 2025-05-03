@@ -2,10 +2,10 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-	project: CollectionEntry<'blog'>;
+	blogPost: CollectionEntry<'blog'>;
 }
 
-const { data, id } = Astro.props.project;
+const { data, id } = Astro.props.blogPost;
 ---
 
 <a class="card" href={`/blog/${id}/`} onmouseover="this.querySelector('.overlay').classList.remove('hidden')" onmouseout="this.querySelector('.overlay').classList.add('hidden')">
