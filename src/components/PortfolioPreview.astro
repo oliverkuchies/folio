@@ -39,8 +39,12 @@ const { data, id, collection } = Astro.props.project;
 		position: relative;
 	}
 
-	.card span p {
+	.theme-dark .card span p {
 		color: var(--gray-200);
+	}
+
+	.card span p {
+		color: white;
 		border-radius: 0.375rem;
 		justify-content: center;
 		align-items: center;
