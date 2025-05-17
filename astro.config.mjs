@@ -6,5 +6,6 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   integrations: [sitemap()],
-  site: "https://oliver.sydney"
+  site: "https://oliver.sydney",
+  trailingSlash: "always"
 });

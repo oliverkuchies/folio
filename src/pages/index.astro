@@ -10,12 +10,11 @@ import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+import PostPreview from '../components/PostPreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
-import BlogPreview from '../components/BlogPreview.astro';
 
 const blogPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
@@ -74,7 +73,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 						{
 							projects.map((project) => (
 								<li>
-									<PortfolioPreview project={project} />
+									<PostPreview type='work' post={project} />
 								</li>
 							))
 						}
@@ -88,28 +87,6 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 					</CallToAction>
 				</div>
 			</section>
-
-			<!-- <section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section> -->
 		</main>
 
 		<main class="wrapper stack gap-8">
@@ -122,7 +99,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 				{
 					blogPosts.map((blogPost) => (
 						<li>
-							<BlogPreview blogPost={blogPost} />
+							<PostPreview type='blog' post={blogPost} />
 						</li>
 					))
 				}

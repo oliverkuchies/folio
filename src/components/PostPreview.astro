@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	type: 'work' | 'blog';
+	post: CollectionEntry<'work' | 'blog'>;
+}
+
+const { data, id } = Astro.props.post;
+const { type } = Astro.props;
+---
+
+<a class="card" href={`/${type}/${id}/`}>
+	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<div class="card-text">
+		<h4 class="title">{data.title}</h4>
+		<p>{data.description}</p>
+	</div>
+</a>
+
+<style>
+	.card {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		box-shadow: 2px 2px 30px 2px #271936;
+		background-color: #1f1f1f;
+	}
+
+	.card:hover {
+		box-shadow: 2px 2px 30px 2px #271936, 0px 0px 20px 0px #271936;
+		transform: scale(1.02);
+		transition: all 0.2s ease-in-out;
+	}
+
+	.card img {
+		max-height: 250px;
+		object-fit: cover;
+	}
+
+	.card p {
+		color: white;
+		padding: 10px 0px;
+	}
+
+	.card > .card-text {
+		padding: 20px 20px;
+		min-height: 175px;
+	}
+
+	.title {
+		text-decoration: none;
+    	font-weight: bold;
+	}
+</style>

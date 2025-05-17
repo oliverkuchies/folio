@@ -4,10 +4,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+import PostPreview from '../components/PostPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
-import BlogPreview from '../components/BlogPreview.astro';
 
 const blogPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
@@ -29,7 +28,7 @@ const blogPosts = (await getCollection('blog')).sort(
 				{
 					blogPosts.map((post) => (
 						<li>
-							<BlogPreview blogPost={post} />
+							<PostPreview type='blog' post={post} />
 						</li>
 					))
 				}
