@@ -9,7 +9,7 @@ const { href } = Astro.props;
 <a href={href}><slot /></a>
 
 <style>
-	a:not(.menu-item) {
+	a:not(.menu-item):not(.card) {
 		position: relative;
 		display: flex;
 		place-content: center;
