@@ -112,15 +112,15 @@ class Hello extends HTMLElement {
 
     private function renderOnIntersect() {
       const intersectionObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                intersectionObserver.unobserve(entry.target);
-                this.render();
-              }
-            })
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              intersectionObserver.unobserve(entry.target);
+              this.render();
+            }
           })
-          intersectionObserver.observe(this);
-      }
+      })
+      intersectionObserver.observe(this);
+    }
 
     customElements.define('hello', Hello);
 }
