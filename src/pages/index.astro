@@ -69,7 +69,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 				</header>
 
 				<div class="gallery">
-					<Grid variant="offset">
+					<Grid>
 						{
 							projects.map((project) => (
 								<li>
@@ -95,7 +95,7 @@ const tagsSplice = tagsSorted.splice(0, 5).map(tag => tag[0]);
 				tagline="See my most recent posts"
 				align="start"
 			/>
-			<Grid variant="offset">
+			<Grid>
 				{
 					blogPosts.map((blogPost) => (
 						<li>

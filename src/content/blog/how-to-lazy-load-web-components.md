@@ -110,7 +110,7 @@ class Hello extends HTMLElement {
         shadow.appendChild(wrapper)
     }
 
-    function renderOnIntersect() {
+    private function renderOnIntersect() {
       const intersectionObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {

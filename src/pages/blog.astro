@@ -24,7 +24,7 @@ const blogPosts = (await getCollection('blog')).sort(
 				tagline="See my most recent posts"
 				align="start"
 			/>
-			<Grid variant="offset">
+			<Grid>
 				{
 					blogPosts.map((post) => (
 						<li>
