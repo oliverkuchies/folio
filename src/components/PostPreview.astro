@@ -11,7 +11,6 @@ const { type } = Astro.props;
 ---
 
 <a class="card" href={`/${type}/${id}/`}>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 	<div class="card-text">
 		<h4 class="title">{data.title}</h4>
 		<p>{data.description}</p>
@@ -26,6 +25,7 @@ const { type } = Astro.props;
 		gap: 20px;
 		box-shadow: 2px 2px 30px 2px #271936;
 		background-color: #1f1f1f;
+		color: 2px solid #302f30;
 	}
 
 	.card:hover {
@@ -47,10 +47,17 @@ const { type } = Astro.props;
 	.card > .card-text {
 		padding: 20px 20px;
 		min-height: 175px;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.title {
+	.card .title {
 		text-decoration: none;
     	font-weight: bold;
+		background: linear-gradient(45deg, #d42e2e, #973bfc, #e7e9eb);
+		-webkit-background-clip: text;
+		color: transparent;
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 	}
 </style>

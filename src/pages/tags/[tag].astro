@@ -43,7 +43,7 @@ const blogPosts = (await getCollection('blog')).filter((project) => project.data
             </div>
 
         <div class="gallery">
-            <Grid variant="offset">
+            <Grid>
                 { blogPosts.map((project) => (
                     <li>
                         <PostPreview type="blog" post={project} />

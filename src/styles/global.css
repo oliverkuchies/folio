@@ -240,6 +240,7 @@ h5 {
     color: #e1e4e8;
     overflow-x: auto;
     padding: 20px;
+	font-size: 14px;
 }
 
 .astro-code code {
