@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import NoFollow from '../layouts/NoFollow.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import PostPreview from '../components/PostPreview.astro';
@@ -13,7 +13,7 @@ const projects = (await getCollection('work')).sort(
 );
 ---
 
-<BaseLayout
+<NoFollow
 	title="My Work | Oliver Kucharzewski"
 	description="Learn about Oliver Kucharzewski's most recent projects"
 >
