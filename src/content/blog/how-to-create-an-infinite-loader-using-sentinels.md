@@ -1,5 +1,5 @@
 ---
-title: How to create an infinite loader using sentinels.
+title: How to create an infinite loader using sentinels
 publishDate: 2025-07-20 15:47:00
 description: |
   Want content to load infinitely without the hassle? Try sentinels.
