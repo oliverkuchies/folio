@@ -35,7 +35,7 @@ Lets begin..
 ### Creating the sentinel
 
 To create a sentinel, we need a div that is hidden to the user, but also visible to the browser.
-This means that using ```css display: none;``` is not an option.
+This means that using ```display: none;``` is not an option.
 However, we can do the following.
 
 ```html
@@ -77,8 +77,8 @@ observer.observe(document.querySelector("#sentinel"));
 A few key things to point out in the code snippet above:
 
 1) The threshold defined provides the browser with a level of sensitivity for the intersection. In our case, since its only one pixel, the sentinel will always be 100% intersected when scrolled past. However, if the sentinel was an extremely large div, only percentages will be viewed at a time which is where a threshold can be lowered to suit your application's needs.
-2) The load more function is essentially a callback, and it can be named however appropriate for your needs. You may choose to decouple your load more logic, so perhaps you can name it ```js sentinelIntersectCallback``` or something along those lines.
-3) Inside the loadMore function, when ```js entry.intersecting``` is true, you should call your infinite load logic. To add more content to the page, you can simply create more divs dynamically and insert them as required.
+2) The load more function is essentially a callback, and it can be named however appropriate for your needs. You may choose to decouple your load more logic, so perhaps you can name it ``` sentinelIntersectCallback``` or something along those lines.
+3) Inside the loadMore function, when ```entry.intersecting``` is true, you should call your infinite load logic. To add more content to the page, you can simply create more divs dynamically and insert them as required.
    
 
 Congratulations on your new infinite loader. For a full demonstration on how this would operate in realtime, please see the snippet below.
