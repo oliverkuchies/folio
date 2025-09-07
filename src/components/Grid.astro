@@ -6,9 +6,9 @@ interface Props {
 const { variant } = Astro.props;
 ---
 
-<ul class:list={['grid', { offset: false, small: variant === 'small' }]}>
+<div class:list={['grid', { offset: false, small: variant === 'small' }]}>
 	<slot />
-</ul>
+</div>
 
 <style>
 	.grid {

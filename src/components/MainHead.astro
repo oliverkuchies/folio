@@ -4,6 +4,7 @@ import '../styles/global.css';
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	image?: string | undefined;
 }
 
 const {
@@ -13,7 +14,9 @@ const {
 ---
 
 <meta charset="UTF-8" />
+<meta name="title" property="og:title" content={title} />
 <meta name="description" property="og:description" content={description} />
+<meta property="og:image" content="/assets/og/creating-well-typed-systems-with-zod.png" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>

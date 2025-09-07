@@ -1,29 +1,7 @@
 /* Global variables */
 :root {
-	/* Colors */
-	--gray-0: #090b11;
-	--gray-50: #141925;
-	--gray-100: #283044;
-	--gray-200: #3d4663;
-	--gray-300: #505d84;
-	--gray-400: #6474a2;
-	--gray-500: #8490b5;
-	--gray-600: #a3acc8;
-	--gray-700: #c3cadb;
-	--gray-800: #e3e6ee;
-	--gray-900: #f3f4f7;
-	--gray-999-basis: 0, 0%, 100%;
-	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #ffffff;
-
-	--accent-light: #c561f6;
-	--accent-regular: #7611a6;
-	--accent-dark: #1c0056;
-	--accent-overlay: hsla(280, 89%, 67%, 0.33);
-	--accent-subtle-overlay: var(--accent-overlay);
-	--accent-text-over: var(--gray-999);
-
-	--link-color: var(--accent-regular);
+	--component-border-highlight: 1px solid #c10ac1;
+	--component-border-default: 1px solid #29053b;
 
 	/* Gradients */
 	--gradient-stop-1: var(--accent-light);
@@ -88,14 +66,16 @@
 	--gray-999-basis: 225, 31%, 5%;
 	--gray-999: #090b11;
 
-	--accent-light: #1c0056;
+	--accent-light: #540354;
 	--accent-regular: #7611a6;
-	--accent-dark: #c561f6;
+	--accent-regular-hover: #9b2de0;
 	--accent-overlay: hsla(280, 89%, 67%, 0.33);
 	--accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
 	--accent-text-over: var(--gray-0);
+	--accent-dark: #141414;
+	--accent-darker: #3a003a;
 
-	--link-color: var(--accent-dark);
+	--link-color: var(--accent-regular);
 
 	--gradient-stop-1: #4c11c6;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
@@ -236,15 +216,57 @@ h5 {
 }
 
 .astro-code {
-	background-color: #24292e;
+	background-color: #141414;
+    border-radius: 5px;
     color: #e1e4e8;
     overflow-x: auto;
     padding: 20px;
 	font-size: 14px;
 }
 
+p, ul, li {
+	font-size: 1.125rem;
+}
+
 .astro-code code {
 	font-family: 'Jetbrains Mono', monospace;
+}
+
+code {
+	background-color: var(--accent-darker);
+    border: 1px solid var(--accent-light);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: var(--accent-darker);
+	box-shadow: var(--shadow-sm);
+	border: var(--component-border-default);
+	th {
+		border: var(--component-border-default);
+		padding: 0.5rem 1rem;
+		text-align: left;
+		background-color: var(--accent-light);
+	}
+	td {
+		border: var(--component-border-default);
+		padding: 0.5rem 1rem;
+		text-align: left;
+	}
+}
+
+.astro-code code {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	border-radius: 0;	
 }
 
 @media (max-width: 500px) {

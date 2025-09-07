@@ -1,0 +1,64 @@
+---
+interface Props {
+    headings: { text: string; depth: number; slug: string }[];
+}
+const { headings } = Astro.props;
+---
+
+<script>
+    const scrollTo = (id: string) => {
+        const element = document.querySelector(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleClick = (event: Event, slug: string) => {
+        event.preventDefault();
+        scrollTo(`#${slug}`);
+    };
+
+    const addEventListeners = () => {
+        const links = document.querySelectorAll('.toc-link');
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = (event.currentTarget as HTMLAnchorElement).getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    handleClick(event, href.substring(1));
+                }
+            });
+        });
+    };
+
+    window.addEventListener('DOMContentLoaded', addEventListeners);
+</script>
+
+{headings.length > 0 && (
+    <nav aria-label="Table of contents" class="stack gap-2" style="margin-bottom: 2rem;">
+        <h2>Table of Contents</h2>
+        <ul class="stack gap-1 table-of-contents">
+            {headings.map((heading) => (
+                <li style={`margin-left: ${(heading.depth - 2) * 1.5}rem;`}>
+                    <a class="toc-link" href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+            ))}
+        </ol>
+    </nav>
+)}
+
+<style>
+ul.table-of-contents {
+	border-radius: 5px;
+	list-style-type: disc;
+	padding-left: 1.5rem;
+
+	li {
+		padding: 5px;
+		color: white;
+
+		a {
+			color: white;
+		}
+	}
+}
+</style>

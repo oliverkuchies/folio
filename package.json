@@ -10,6 +10,12 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",
-    "astro": "^5.7.13"
+    "@vercel/og": "^0.8.5",
+    "astro": "^5.7.13",
+    "astro-og-canvas": "^0.7.0",
+    "react": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12"
   }
 }

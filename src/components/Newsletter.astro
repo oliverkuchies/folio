@@ -1,0 +1,71 @@
+---
+const mailchimpUrl = "https://sydney.us3.list-manage.com/subscribe/post?u=9ea9faadd98159942128c050b&amp;id=fda0058483&amp;f_id=000831e1f0";
+---
+
+<form action={mailchimpUrl} method="POST" target="_blank" class="newsletter-form">
+  <p>Enjoyed the article? Sign up for more!</p>
+  <label for="email" class="sr-only">Email address</label>
+  <input
+    type="email"
+    name="EMAIL"
+    id="email"
+    required
+    autocomplete="email"
+    placeholder="bob@example.com"
+  />
+  <button type="submit">Subscribe</button>
+</form>
+
+<style>
+.newsletter-form {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    background: var(--accent-dark);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.newsletter-form label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+}
+
+.newsletter-form p {
+    line-height: 2.5rem;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 1.125rem;
+    background-color: #272727;
+    border: 1px solid #232222;
+    color: white;
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent-regular);
+    }
+}
+
+.newsletter-form button {
+    padding: 0.5rem 1rem;
+    background: var(--accent-regular);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+    background: var(--accent-regular-hover);
+}
+</style>

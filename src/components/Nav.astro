@@ -7,7 +7,6 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Work', href: '/work/' },
 	{ label: 'Blog', href: '/blog/' },
-	{ label: 'About', href: '/about/' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -41,17 +40,15 @@ const isCurrentPage = (href: string) => {
 		</menu-button>
 	</div>
 	<noscript>
-		<ul class="nav-items">
+		<nav class="nav-items">
 			{
 				textLinks.map(({ label, href }) => (
-					<li>
 						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href}>
 							{label}
 						</a>
-					</li>
 				))
 			}
-		</ul>
+		</nav>
 	</noscript>
 	<noscript>
 		<div class="menu-footer">
@@ -68,17 +65,15 @@ const isCurrentPage = (href: string) => {
 		</div>
 	</noscript>
 	<div id="menu-content" hidden>
-		<ul class="nav-items">
+		<nav class="nav-items">
 			{
 				textLinks.map(({ label, href }) => (
-					<li>
 						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href}>
 							{label}
 						</a>
-					</li>
 				))
 			}
-		</ul>
+		</nav>
 		<div class="menu-footer">
 			<div class="socials">
 				{
@@ -186,7 +181,6 @@ const isCurrentPage = (href: string) => {
 		position: absolute;
 		inset: -1px;
 		content: '';
-		background: var(--gradient-stroke);
 		border-radius: 999rem;
 		z-index: -1;
 	}
@@ -295,7 +289,6 @@ const isCurrentPage = (href: string) => {
 			position: absolute;
 			inset: -1px;
 			content: '';
-			background: var(--gradient-stroke);
 			border-radius: 999rem;
 			z-index: -1;
 		}

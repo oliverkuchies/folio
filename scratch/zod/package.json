@@ -1,0 +1,15 @@
+{
+  "name": "zod",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "zod": "^4.1.5"
+  }
+}
