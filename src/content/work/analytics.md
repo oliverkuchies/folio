@@ -1,7 +1,7 @@
 ---
 title: End To End Analytics
 publishDate: 2025-03-02 00:00:00
-img: /assets/projects/traffic-overview.webp
+image: /assets/projects/traffic-overview.webp
 img_alt: Google Analytics integration
 description: |
   I architected a Google Analytics integration which utilised persistent data tracking, and microservice interactions.

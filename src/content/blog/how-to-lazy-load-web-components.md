@@ -1,7 +1,7 @@
 ---
 title: How to lazy load web components
 publishDate: 2025-05-25 16:07:00
-img: /assets/blog/how-to-lazy-load-web-components/image.png
+image: /assets/blog/how-to-lazy-load-web-components/image.png
 img_alt: Lazy Loading Web Components
 description: | 
   Lazy loading, when used correctly can enhance user experience. Have you tried lazy loading your web components?

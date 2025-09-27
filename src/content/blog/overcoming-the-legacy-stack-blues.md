@@ -1,7 +1,7 @@
 ---
 title: Overcoming the legacy stack blues
 publishDate: 2025-09-27 14:24:00
-img: /assets/og/overcoming-the-legacy-stack-blues.png
+image: /assets/og/overcoming-the-legacy-stack-blues.png
 description: | 
   Legacy Stack are the words every engineer dread, but you can overcome it.
 

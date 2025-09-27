@@ -1,7 +1,7 @@
 ---
 title: How to debug front-end web apps
 publishDate: 2025-03-23 16:55:00
-img: /assets/blog/how-to-debug-front-end-web-apps/image.png
+image: /assets/blog/how-to-debug-front-end-web-apps/image.png
 img_alt: Debugging front end applications
 description: |
   Front end applications can be tricky to debug. This guide will tell you where to start

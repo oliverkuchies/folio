@@ -1,7 +1,7 @@
 ---
 title: Bundle Optimisation
 publishDate: 2025-03-02 00:00:00
-img: /assets/projects/bundles.png
+image: /assets/projects/bundles.png
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   I effectively reduced bundle sizes by 80% and further optimised future bundles.

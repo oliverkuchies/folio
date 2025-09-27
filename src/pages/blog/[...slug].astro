@@ -33,12 +33,14 @@ export async function getStaticPaths() {
 	}));
 }
 
-
 const { entry, headings } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image}>
 	<div class="stack gap-20">
 		<div class="stack">
 			<header>

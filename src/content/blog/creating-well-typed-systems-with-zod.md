@@ -1,10 +1,9 @@
 ---
 title: Creating well typed systems with Zod
 publishDate: 2025-09-06 14:24:00
-img: /assets/og/creating-well-typed-systems-with-zod.png
+image: /assets/og/creating-well-typed-systems-with-zod.png
 description: | 
   Typescript offers endless opportunities to build typesafe systems for the web. Zod makes it 10x better.
-
 tags:
   - Typescript
   - Zod

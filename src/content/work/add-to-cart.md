@@ -1,7 +1,7 @@
 ---
 title: Add To Cart
 publishDate: 2025-03-02 00:00:00
-img: /assets/projects/add-to-cart.webp
+image: /assets/projects/add-to-cart.webp
 img_alt: Add To Cart functionality for UGC Widgets using Shopify
 description: |
   I developed an add to cart integration to allow customer facing websites to integrate with Shopify.

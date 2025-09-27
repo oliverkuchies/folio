@@ -1,7 +1,7 @@
 ---
 title: How we created multi region S3 endpoints with low latency
 publishDate: 2025-05-03 20:17:00
-img: /assets/blog/how-we-created-multi-region-s3-endpoints-with-low-latency/icon.png
+image: /assets/blog/how-we-created-multi-region-s3-endpoints-with-low-latency/icon.png
 img_alt: S3 Icons
 description: |
   We figured out a way to reduce latency across multiple regions, have a read to see how we accomplished this!
