@@ -173,9 +173,9 @@ h5 {
 
 .wrapper {
 	margin-inline: auto;
-	flex-direction: column;
+    flex-direction: column;
     max-width: 80%;
-	padding-inline: 1.5rem;
+    padding-inline: 1.5rem;
 }
 
 .stack {
@@ -235,9 +235,9 @@ p, ul, li {
 code {
 	background-color: var(--accent-darker);
     border: 1px solid var(--accent-light);
-    font-size: 16px;
+    font-size: var(--text-sm);
     font-weight: bold;
-    padding: 5px;
+    padding: 2px;
     border-radius: 5px;
 }
 
