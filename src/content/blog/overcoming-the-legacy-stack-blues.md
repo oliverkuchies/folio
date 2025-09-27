@@ -203,6 +203,9 @@ ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 Tada! And just like that we've cleaned up the legacy code to be more manageable and testable. We could isolate the tests to target TidyView, with the parameters supplied by the legacy code (to best replicate the environment). 
+
+If you ever notice spaghetti code in your code base, try decoupling it in a separate repository (or folder) with build processes that are adopting latest standards. This will improve your velocity as a software engineer and will increase the quality of the code you produce.
+
 ##### Creating meaningful API contracts to share with front-end engineers
 
 A fundamental way that we improved overall developer speed was enabling front-end engineers to work without needing to build against prebuild APIs.
@@ -239,6 +242,9 @@ Deployments would take around 30mins each (on average), with the longest deploym
 In order to get deployments into production, the deployment to staging had to be complete first. It was a direct dependency. The result of this was that in the case of an emergency where a hotfix needed to be shipped ASAP, we would need to wait 1hr for staging to build, and then an additional 1hr for production to be built. That's a total of 2 hours wait time (if the hotfix works).
 
 Moreover, there were no tests. Code reviews were non existent too.
+
+I strongly believe that a healthy CI/CD process is critical to development velocity and product health. If neglected, the CI/CD can become a bottleneck to engineers due to lack of bug detection & slow speed.
+
 ### Addressing the elephant in the room - no code reviews
 
 Upon entering the team, the first change I proposed was code reviews. This was my role as a Senior Engineer after all, to support the quality of the code across the organization.
@@ -252,6 +258,7 @@ Once we employed this changes, the amount of overall team collaboration improved
 - Logic errors
 - Poor algorithm performance
 - Code smells or unclean code.
+  
 ### Decoupling CI/CD with Github Actions
 
 Github Actions worked wonders for our team. Through the use of Github Actions we were able to decouple our repositories from a central self-managed CI/CD platform. As mentioned, there was quite an overhead in managing the centralised Jenkins platform as a number of the plugins utilised had vulnerabilities detected. These plugins were difficult to update due to the dependent pipeline logic.
