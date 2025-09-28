@@ -24,9 +24,10 @@ In a previous role of mine, I saw all of these issues plus more.
 
 But our team accomplished the unthinkable, and walked out the other end with completely renewed engineering minds.
 
-In this story ill share my experience, and the transformation that I saw in myself as we navigated through the legacy stack blues.
+In this story i'll share my experience, and the transformation that I saw in myself as we navigated through the legacy stack blues.
 
 As you read I would encourage you to think about whether you face some of these challenges in your workplace, and if you do, please be encouraged - you can overcome them!
+
 ## Defining The Legacy Stack Blues
 
 With a quick Google search of "legacy stack blues", I couldn't find one definition. 
@@ -52,11 +53,16 @@ My new role begins as a full stack engineer at an organization where I receive m
 The version of Vagrant our stack utilized required a MacOS with an Intel Chip and that made it incompatible with Apple silicon chips (the more performant model at the time).
 
 My machine was alright, but mediocre at best. It would slow down after opening a few IDE windows, and the battery life was abysmal (due to being second-hand). I had to have the battery replaced at the local Apple store as a result, and the amount of output was quite slow at the time.
+
 ### How we fixed our local machine issues
 
 In order to overcome our sub-par development environment, our team made the transition to utilize Docker containers instead of Vagrant Boxes. 
 
-The transition was quite straight forward as Docker containers offer a similar level of isolation to Vagrant boxes. The networking associated with Docker containers was a lot easier to manage, and it allowed our team to scale new services with ease and also connect our microservices together. Docker containers by nature are quite lightweight, while Vagrant boxes are a lot bulkier (as they run an entire OS), which means booting them up was seamless.
+The transition was quite straight forward as Docker containers offer a similar level of isolation to Vagrant boxes. 
+
+The networking associated with Docker containers was a lot easier to manage, and it allowed our team to scale new services with ease and also connect our microservices together. 
+
+Docker containers by nature are quite lightweight, while Vagrant boxes are a lot bulkier (as they run an entire OS), which means booting them up was seamless.
 
 ## Slow Development Processes
 
@@ -80,15 +86,21 @@ However, it looked like the start command failed.
 
 Then, I attempted to execute `npm run build`. It took around 5 minutes for the build to complete successfully.
 
-This was an extremely critical bottleneck in the development workflow. It meant that each engineer was not motivated to use their local development environment and chose to utilise a QA environment to test their code changes instead. It was not ideal.
+This was an extremely critical bottleneck in the development workflow. 
+
+It meant that each engineer was not motivated to use their local development environment and chose to utilise a QA environment to test their code changes instead. It was not ideal.
 
 ### How we resolved our slow build process & broken dependencies
 
-In order to fix the slow build process, I knew we would need to do something about our machines (as a Silicon Mac Chip would improve speed substantially). At the time I did not have the authority to make that decision, so I decided to discover other contingencies. 
+In order to fix the slow build process, I knew we would need to do something about our machines (as a Silicon Mac Chip would improve speed substantially). 
+
+At the time I did not have the authority to make that decision, so I decided to discover other contingencies. 
 
 I decided to introduce my team to Esbuild. At the time it was still in early release, but the speed improvement that it offered was exactly what our team needed. 
 
-I replaced the bundling of our largest JS and CSS bundle with Esbuild configuration. I enabled tree-shaking and minification to keep the bundle slim. I decoupled this bundle from the rest of the webpack configuration.
+I replaced the bundling of our largest JS and CSS bundle with Esbuild configuration. I enabled tree-shaking and minification to keep the bundle slim. 
+
+I decoupled this bundle from the rest of the webpack configuration.
 
 Immediately a team member pings me and notices a significant speed improvement. Bundling would now occur on our sub par machines in less than 30 seconds.
 
@@ -239,7 +251,11 @@ Our CI/CD processes at the time were showing their age, and as a result they wer
 
 Deployments would take around 30mins each (on average), with the longest deployments taking up to an hour.
 
-In order to get deployments into production, the deployment to staging had to be complete first. It was a direct dependency. The result of this was that in the case of an emergency where a hotfix needed to be shipped ASAP, we would need to wait 1hr for staging to build, and then an additional 1hr for production to be built. That's a total of 2 hours wait time (if the hotfix works).
+In order to get deployments into production, the deployment to staging had to be complete first. It was a direct dependency. 
+
+The result of this was that in the case of an emergency where a hotfix needed to be shipped ASAP, we would need to wait 1hr for staging to build, and then an additional 1hr for production to be built. 
+
+That's a total of 2 hours wait time (if the hotfix works).
 
 Moreover, there were no tests. Code reviews were non existent too.
 
