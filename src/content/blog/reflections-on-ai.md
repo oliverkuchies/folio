@@ -31,4 +31,4 @@ I manage my development workflow by using the Arc browser, which allows me to or
 
 With this structure, I'm able to quickly jump around and manage my agents while also using my time to make modifications to the PRs produced to ensure no AI-generated slop falls through.
 
-P.S. I wrote this article without AI, but I formatted it with AI. Cool huh?
+P.S. I wrote this article without AI, but I formatted it with AI. I'm still using my brain. Cool huh?
