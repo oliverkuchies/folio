@@ -1,7 +1,7 @@
 
 ---
 title: Reflections on AI (LLMS) in Development
-publishDate: 2025-09-06 14:24:00
+publishDate: 2025-10-19 18:48
 description: | 
   LLMs can substantially improve development workflow. Learn how it has changed mine.
 tags:
